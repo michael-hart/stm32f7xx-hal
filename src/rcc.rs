@@ -115,56 +115,22 @@ impl CFGR {
             }
         } else {
             #[cfg(any(
-                feature = "stm32f401",
-                feature = "stm32f405",
-                feature = "stm32f407",
-                feature = "stm32f410",
-                feature = "stm32f411",
-                feature = "stm32f412",
-                feature = "stm32f413",
-                feature = "stm32f415",
-                feature = "stm32f417",
-                feature = "stm32f423",
-                feature = "stm32f427",
-                feature = "stm32f429",
-                feature = "stm32f437",
-                feature = "stm32f439",
-                feature = "stm32f469",
-                feature = "stm32f479"
+                feature = "stm32f7x2",
+                feature = "stm32f7x3",
+                feature = "stm32f7x5",
+                feature = "stm32f7x6",
+                feature = "stm32f7x7",
+                feature = "stm32f7x9",
             ))]
             let sysclk_min = 24_000_000;
 
-            #[cfg(any(feature = "stm32f446"))]
-            let sysclk_min = 12_500_000;
-
-            #[cfg(feature = "stm32f401")]
-            let sysclk_max = 84_000_000;
-
             #[cfg(any(
-                feature = "stm32f405",
-                feature = "stm32f407",
-                feature = "stm32f415",
-                feature = "stm32f417"
-            ))]
-            let sysclk_max = 168_000_000;
-
-            #[cfg(any(
-                feature = "stm32f410",
-                feature = "stm32f411",
-                feature = "stm32f412",
-                feature = "stm32f413",
-                feature = "stm32f423"
-            ))]
-            let sysclk_max = 100_000_000;
-
-            #[cfg(any(
-                feature = "stm32f427",
-                feature = "stm32f429",
-                feature = "stm32f437",
-                feature = "stm32f439",
-                feature = "stm32f446",
-                feature = "stm32f469",
-                feature = "stm32f479"
+                feature = "stm32f7x2",
+                feature = "stm32f7x3",
+                feature = "stm32f7x5",
+                feature = "stm32f7x6",
+                feature = "stm32f7x7",
+                feature = "stm32f7x9",
             ))]
             let sysclk_max = 180_000_000;
 
@@ -201,26 +167,14 @@ impl CFGR {
             let pclk2 = hclk / ppre2 as u32;
 
             #[cfg(any(
-                feature = "stm32f401",
-                feature = "stm32f405",
-                feature = "stm32f407",
-                feature = "stm32f410",
-                feature = "stm32f411",
-                feature = "stm32f412",
-                feature = "stm32f415",
-                feature = "stm32f417",
-                feature = "stm32f427",
-                feature = "stm32f429",
-                feature = "stm32f437",
-                feature = "stm32f439",
-                feature = "stm32f446",
-                feature = "stm32f469",
-                feature = "stm32f479"
+                feature = "stm32f7x2",
+                feature = "stm32f7x3",
+                feature = "stm32f7x5",
+                feature = "stm32f7x6",
+                feature = "stm32f7x7",
+                feature = "stm32f7x9",
             ))]
             let flash_latency_step = 30_000_000;
-
-            #[cfg(any(feature = "stm32f413", feature = "stm32f423"))]
-            let flash_latency_step = 25_000_000;
 
             // Adjust flash wait states
             unsafe {

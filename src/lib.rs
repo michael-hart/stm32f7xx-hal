@@ -10,149 +10,100 @@ extern crate void;
 pub extern crate nb;
 pub use nb::block;
 
-pub extern crate stm32f4;
+pub extern crate stm32f7;
 
-#[cfg(feature = "stm32f401")]
-pub use stm32f4::stm32f401 as stm32;
+#[cfg(feature = "stm32f7x2")]
+pub use stm32f7::stm32f7x2 as stm32;
 
-#[cfg(feature = "stm32f407")]
-pub use stm32f4::stm32f407 as stm32;
+#[cfg(feature = "stm32f7x3")]
+pub use stm32f7::stm32f7x3 as stm32;
 
-#[cfg(feature = "stm32f412")]
-pub use stm32f4::stm32f412 as stm32;
+#[cfg(feature = "stm32f7x5")]
+pub use stm32f7::stm32f7x5 as stm32;
 
-#[cfg(feature = "stm32f429")]
-pub use stm32f4::stm32f429 as stm32;
+#[cfg(feature = "stm32f7x6")]
+pub use stm32f7::stm32f7x6 as stm32;
 
-#[cfg(feature = "stm32f411")]
-pub use stm32f4::stm32f411 as stm32;
+#[cfg(feature = "stm32f7x7")]
+pub use stm32f7::stm32f7x7 as stm32;
+
+#[cfg(feature = "stm32f7x9")]
+pub use stm32f7::stm32f7x9 as stm32;
 
 // Enable use of interrupt macro
 #[cfg(feature = "rt")]
-pub use stm32f4::interrupt;
+pub use stm32f7::interrupt;
 
 #[cfg(any(
-    feature = "stm32f401",
-    feature = "stm32f405",
-    feature = "stm32f407",
-    feature = "stm32f410",
-    feature = "stm32f411",
-    feature = "stm32f412",
-    feature = "stm32f413",
-    feature = "stm32f415",
-    feature = "stm32f417",
-    feature = "stm32f423",
-    feature = "stm32f427",
-    feature = "stm32f429",
-    feature = "stm32f437",
-    feature = "stm32f439",
-    feature = "stm32f446",
-    feature = "stm32f469",
-    feature = "stm32f479"
+    feature = "stm32f7x2",
+    feature = "stm32f7x3",
+    feature = "stm32f7x5",
+    feature = "stm32f7x6",
+    feature = "stm32f7x7",
+    feature = "stm32f7x9",
 ))]
 pub mod delay;
 #[cfg(any(
-    feature = "stm32f401",
-    feature = "stm32f405",
-    feature = "stm32f407",
-    feature = "stm32f410",
-    feature = "stm32f411",
-    feature = "stm32f412",
-    feature = "stm32f413",
-    feature = "stm32f415",
-    feature = "stm32f417",
-    feature = "stm32f423",
-    feature = "stm32f427",
-    feature = "stm32f429",
-    feature = "stm32f437",
-    feature = "stm32f439",
-    feature = "stm32f446",
-    feature = "stm32f469",
-    feature = "stm32f479"
+    feature = "stm32f7x2",
+    feature = "stm32f7x3",
+    feature = "stm32f7x5",
+    feature = "stm32f7x6",
+    feature = "stm32f7x7",
+    feature = "stm32f7x9",
 ))]
 pub mod gpio;
 #[cfg(any(
-    feature = "stm32f401",
-    feature = "stm32f407",
-    feature = "stm32f412",
-    feature = "stm32f429",
-    feature = "stm32f411"
+    feature = "stm32f7x2",
+    feature = "stm32f7x3",
+    feature = "stm32f7x5",
+    feature = "stm32f7x6",
+    feature = "stm32f7x7",
+    feature = "stm32f7x9",
 ))]
 pub mod i2c;
 #[cfg(any(
-    feature = "stm32f401",
-    feature = "stm32f407",
-    feature = "stm32f412",
-    feature = "stm32f429",
-    feature = "stm32f411"
+    feature = "stm32f7x2",
+    feature = "stm32f7x3",
+    feature = "stm32f7x5",
+    feature = "stm32f7x6",
+    feature = "stm32f7x7",
+    feature = "stm32f7x9",
 ))]
 pub mod prelude;
 #[cfg(any(
-    feature = "stm32f401",
-    feature = "stm32f405",
-    feature = "stm32f407",
-    feature = "stm32f410",
-    feature = "stm32f411",
-    feature = "stm32f412",
-    feature = "stm32f413",
-    feature = "stm32f415",
-    feature = "stm32f417",
-    feature = "stm32f423",
-    feature = "stm32f427",
-    feature = "stm32f429",
-    feature = "stm32f437",
-    feature = "stm32f439",
-    feature = "stm32f446",
-    feature = "stm32f469",
-    feature = "stm32f479"
+    feature = "stm32f7x2",
+    feature = "stm32f7x3",
+    feature = "stm32f7x5",
+    feature = "stm32f7x6",
+    feature = "stm32f7x7",
+    feature = "stm32f7x9",
 ))]
 pub mod rcc;
 #[cfg(any(
-    feature = "stm32f401",
-    feature = "stm32f407",
-    feature = "stm32f412",
-    feature = "stm32f429",
-    feature = "stm32f411"
+    feature = "stm32f7x2",
+    feature = "stm32f7x3",
+    feature = "stm32f7x5",
+    feature = "stm32f7x6",
+    feature = "stm32f7x7",
+    feature = "stm32f7x9",
 ))]
 pub mod serial;
 #[cfg(any(
-    feature = "stm32f401",
-    feature = "stm32f405",
-    feature = "stm32f407",
-    feature = "stm32f410",
-    feature = "stm32f411",
-    feature = "stm32f412",
-    feature = "stm32f413",
-    feature = "stm32f415",
-    feature = "stm32f417",
-    feature = "stm32f423",
-    feature = "stm32f427",
-    feature = "stm32f429",
-    feature = "stm32f437",
-    feature = "stm32f439",
-    feature = "stm32f446",
-    feature = "stm32f469",
-    feature = "stm32f479"
+    feature = "stm32f7x2",
+    feature = "stm32f7x3",
+    feature = "stm32f7x5",
+    feature = "stm32f7x6",
+    feature = "stm32f7x7",
+    feature = "stm32f7x9",
 ))]
 pub mod spi;
 pub mod time;
 #[cfg(any(
-    feature = "stm32f401",
-    feature = "stm32f405",
-    feature = "stm32f407",
-    feature = "stm32f410",
-    feature = "stm32f411",
-    feature = "stm32f412",
-    feature = "stm32f413",
-    feature = "stm32f415",
-    feature = "stm32f417",
-    feature = "stm32f423",
-    feature = "stm32f427",
-    feature = "stm32f429",
-    feature = "stm32f437",
-    feature = "stm32f439",
-    feature = "stm32f446",
-    feature = "stm32f469",
-    feature = "stm32f479"
+    feature = "stm32f7x2",
+    feature = "stm32f7x3",
+    feature = "stm32f7x5",
+    feature = "stm32f7x6",
+    feature = "stm32f7x7",
+    feature = "stm32f7x9",
 ))]
 pub mod timer;

@@ -1,15 +1,17 @@
-stm32f4xx-hal
-=============
+(WIP) stm32f7xx-hal
+===================
 
-_stm32f4xx-hal_ contains a multi device hardware abstraction on top of the
-peripheral access API for the STMicro STM32F4 series microcontrollers. The
+_stm32f7xx-hal_ contains a multi device hardware abstraction on top of the
+peripheral access API for the STMicro STM32F7 series microcontrollers. The
 selection of the MCU is done by feature gates, typically specified by board
 support crates. Currently supported configurations are:
 
-* stm32f401
-* stm32f407
-* stm32f412
-* stm32f429
+* stm32f7x2
+* stm32f7x3
+* stm32f7x5
+* stm32f7x6
+* stm32f7x7
+* stm32f7x9
 
 The idea behind this crate is to gloss over the slight differences in the
 various peripherals available on those MCUs so a HAL can be written for all
@@ -18,15 +20,15 @@ single model.
 
 Collaboration on this crate is highly welcome as are pull requests!
 
-This crate relies on Adam Greigs fantastic [stm32f4][] crate to provide
+This crate relies on Adam Greigs fantastic [stm32f7][] crate to provide
 appropriate register definitions and implements a partial set of the
 [embedded-hal][] traits.
 
-Some of the implementation was shamelessly adapted from the [stm32f103xx-hal][]
-crate by Jorge Aparicio.
+ALL of this implementation was based on the [stm32f4xx-hal][] crate by Daniel
+Egger.
 
-[stm32f4]: https://crates.io/crates/stm32f4
-[stm32f103xx-hal]: https://github.com/japaric/stm32f103xx-hal
+[stm32f7]: https://crates.io/crates/stm32f7
+[stm32f7xx-hal]: https://github.com/therealprof/stm32f7xx-hal
 [embedded-hal]: https://github.com/japaric/embedded-hal.git
 
 License
