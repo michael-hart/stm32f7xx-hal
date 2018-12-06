@@ -114,25 +114,11 @@ impl CFGR {
                 sysclk: Hertz(sysclk),
             }
         } else {
-            #[cfg(any(
-                feature = "stm32f7x2",
-                feature = "stm32f7x3",
-                feature = "stm32f7x5",
-                feature = "stm32f7x6",
-                feature = "stm32f7x7",
-                feature = "stm32f7x9",
-            ))]
+            #[cfg(any(feature = "stm32f756"))]
             let sysclk_min = 24_000_000;
 
-            #[cfg(any(
-                feature = "stm32f7x2",
-                feature = "stm32f7x3",
-                feature = "stm32f7x5",
-                feature = "stm32f7x6",
-                feature = "stm32f7x7",
-                feature = "stm32f7x9",
-            ))]
-            let sysclk_max = 180_000_000;
+            #[cfg(any(feature = "stm32f756"))]
+            let sysclk_max = 216_000_000;
 
             assert!(sysclk <= sysclk_max && sysclk >= sysclk_min);
 
@@ -166,14 +152,7 @@ impl CFGR {
             let pclk1 = hclk / ppre1 as u32;
             let pclk2 = hclk / ppre2 as u32;
 
-            #[cfg(any(
-                feature = "stm32f7x2",
-                feature = "stm32f7x3",
-                feature = "stm32f7x5",
-                feature = "stm32f7x6",
-                feature = "stm32f7x7",
-                feature = "stm32f7x9",
-            ))]
+            #[cfg(any(feature = "stm32f756"))]
             let flash_latency_step = 30_000_000;
 
             // Adjust flash wait states

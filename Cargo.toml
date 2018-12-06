@@ -43,12 +43,7 @@ version = "0.2.2"
 
 [features]
 rt = ["stm32f7/rt"]
-stm32f7x2 = ["stm32f7/stm32f7x2"]
-stm32f7x3 = ["stm32f7/stm32f7x3"]
-stm32f7x5 = ["stm32f7/stm32f7x5"]
-stm32f7x6 = ["stm32f7/stm32f7x6"]
-stm32f7x7 = ["stm32f7/stm32f7x7"]
-stm32f7x9 = ["stm32f7/stm32f7x9"]
+stm32f756 = ["stm32f7/stm32f7x6"]
 
 [profile.dev]
 debug = true

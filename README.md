@@ -6,12 +6,7 @@ peripheral access API for the STMicro STM32F7 series microcontrollers. The
 selection of the MCU is done by feature gates, typically specified by board
 support crates. Currently supported configurations are:
 
-* stm32f7x2
-* stm32f7x3
-* stm32f7x5
-* stm32f7x6
-* stm32f7x7
-* stm32f7x9
+* stm32f756
 
 The idea behind this crate is to gloss over the slight differences in the
 various peripherals available on those MCUs so a HAL can be written for all
